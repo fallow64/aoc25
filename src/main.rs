@@ -1,8 +1,9 @@
 mod day1;
+mod day2;
 
 use std::{env, fs, process};
 
-const DAY_FUNCS: &[fn(Vec<String>)] = &[day1::run];
+const DAY_FUNCS: &[fn(Vec<String>)] = &[day1::run, day2::run];
 
 fn main() {
     let mut args = env::args();
