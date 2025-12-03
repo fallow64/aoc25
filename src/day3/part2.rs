@@ -3,6 +3,7 @@
 // problem: we are given a bank of batteries, and within each battery is a jolt.
 // we need to create the maximum 12-digit joltage by selecting digits from the bank.
 // and then sum those up
+// greedy solution since we _always_ replace smaller digits with larger ones
 pub fn solve(input: &Vec<Vec<usize>>) -> usize {
     const TARGET_DIGITS: usize = 12;
 
