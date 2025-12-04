@@ -32,7 +32,6 @@ pub fn solve(input: &mut Vec<Vec<Cell>>) -> usize {
                 }
 
                 if neighbors < 4 {
-                    println!("Cell at ({},{}) has only {} neighbors", row, col, neighbors);
                     count += 1;
                     // Change the cell to Empty
                     input[row][col] = Cell::Empty;
