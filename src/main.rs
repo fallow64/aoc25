@@ -1,13 +1,14 @@
 mod day1;
 mod day2;
 mod day3;
+mod day4;
 
 #[allow(dead_code)]
 mod template;
 
 use std::{env, fs, process};
 
-const DAY_FUNCS: &[fn(Vec<String>)] = &[day1::run, day2::run, day3::run];
+const DAY_FUNCS: &[fn(Vec<String>)] = &[day1::run, day2::run, day3::run, day4::run];
 
 fn main() {
     let mut args = env::args();
