@@ -1,8 +1,8 @@
 mod part1;
 mod part2;
 
-pub fn run(files: Vec<String>) {
-    let file = files.first().expect("at least one input file");
+pub fn run() {
+    let file = include_str!("day3.txt");
 
     let input: Vec<Vec<usize>> = file
         .lines()

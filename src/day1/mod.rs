@@ -4,8 +4,9 @@ mod part2;
 const STARTING_ROTATION: i32 = 50;
 const FULL_ROTATION: i32 = 100;
 
-pub fn run(files: Vec<String>) {
-    let file = files.get(0).expect("at least one input file");
+pub fn run() {
+    let file = include_str!("day1.txt");
+
     let input = file
         .lines()
         .map(|line| {

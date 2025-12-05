@@ -7,8 +7,8 @@ enum Cell {
     Paper,
 }
 
-pub fn run(files: Vec<String>) {
-    let file = files.first().expect("at least one input file");
+pub fn run() {
+    let file = include_str!("day4.txt");
 
     let mut input = file
         .lines()

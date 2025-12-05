@@ -7,9 +7,9 @@ mod day5;
 #[allow(dead_code)]
 mod template;
 
-use std::{env, fs, process};
+use std::{env, process};
 
-const DAY_FUNCS: &[fn(Vec<String>)] = &[day1::run, day2::run, day3::run, day4::run, day5::run];
+const DAY_FUNCS: &[fn()] = &[day1::run, day2::run, day3::run, day4::run, day5::run];
 
 fn main() {
     let mut args = env::args();
@@ -30,20 +30,8 @@ fn main() {
         }
     };
 
-    let file_names = args.collect::<Vec<String>>();
-
-    let files = file_names
-        .iter()
-        .map(|file_name| {
-            fs::read_to_string(file_name).unwrap_or_else(|_| {
-                eprintln!("Error: could not read file '{file_name}'");
-                process::exit(1);
-            })
-        })
-        .collect::<Vec<String>>();
-
     if let Some(day_func) = DAY_FUNCS.get(index.wrapping_sub(1)) {
-        day_func(files);
+        day_func();
     } else {
         eprintln!("Error: day {index} is not implemented");
         process::exit(1);
