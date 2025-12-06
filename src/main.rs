@@ -3,13 +3,21 @@ mod day2;
 mod day3;
 mod day4;
 mod day5;
+mod day6;
 
 #[allow(dead_code)]
 mod template;
 
 use std::{env, process};
 
-const DAY_FUNCS: &[fn()] = &[day1::run, day2::run, day3::run, day4::run, day5::run];
+const DAY_FUNCS: &[fn()] = &[
+    day1::run,
+    day2::run,
+    day3::run,
+    day4::run,
+    day5::run,
+    day6::run,
+];
 
 fn main() {
     let mut args = env::args();
@@ -25,7 +33,7 @@ fn main() {
             }
         },
         None => {
-            eprintln!("Usage: {program_name} <day> <input_files>");
+            eprintln!("Usage: {program_name} day");
             process::exit(1);
         }
     };
