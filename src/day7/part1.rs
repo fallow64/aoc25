@@ -4,16 +4,12 @@ pub fn solve(input: &Vec<Vec<Cell>>) -> usize {
     let start_pos = input
         .iter()
         .enumerate()
-        .flat_map(|(row_idx, row)| {
+        .find_map(|(row_idx, row)| {
             row.iter()
-                .enumerate()
-                .filter_map(move |(col_idx, cell)| match cell {
-                    Cell::Start => Some((row_idx, col_idx)),
-                    _ => None,
-                })
+                .position(|&cell| cell == Cell::Start)
+                .map(|col_idx| (row_idx, col_idx))
         })
-        .next()
-        .expect("Input must have a starting position");
+        .expect("No starting position found");
 
     let mut beams = vec![start_pos];
     let mut total_splits = 0;
